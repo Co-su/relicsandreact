@@ -2,6 +2,20 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+var mysql = require("mysql");
+
+
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3301,
+
+  // Your username
+  user: "root",
+
+  // Your password
+  password: "lol123",
+  database: "heroes_monsters_db"
+});
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
