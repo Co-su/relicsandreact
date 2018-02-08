@@ -8,7 +8,6 @@ import Col from "../components/Col";
 export class Hubworld extends Component {
 	render() {
 		return (
-
 	<div className = "hubworld">
     	<Hero>
       		<h1> Relics and React </h1>
@@ -40,10 +39,6 @@ export class Hubworld extends Component {
     	</Container>
   	</div>
 	)
-<<<<<<< HEAD
->>>>>>> b3ed631b9b9a49d95c6241e4eff2e4a24359e097
-=======
->>>>>>> 17eac086538fef9a97681b6eb6bcf423b9a497f6
 	}
 }
 export default Hubworld;
