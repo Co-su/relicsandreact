@@ -3,3 +3,72 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.hubworld {
+	background-image: url("./assets/image.png");
+
+
+    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.codesrealm {
+	background-image: url("./assets/c_ode.jpg");
+
+
+    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.forest {
+	background-image: url("./assets/forest.jpg");
+
+
+    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.castle {
+	background-image: url("./assets/castle.jpg");
+	    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tavern {
+
+	background-image: url("./assets/tavern.jpg");
+	    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.login {
+	
+}
