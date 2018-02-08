@@ -20,8 +20,7 @@ class App extends Component {
       <Router>
         <div className="App">
 
-           <Route exact path="/" component = {Hubworld}/>
-
+      
            <Route exact path="/startquest" component={Startquest}/>
 
            <Route exact path="/castle" component={Castle}/>
