@@ -9,6 +9,7 @@ export class Hubworld extends Component {
 	render() {
 		return (
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<div className="hubworld">
 			<h1 id="go-forest">Go to the forest</h1>
 			<h1 id="go-to-codesrealm">Go to C'ode's Realm</h1>
@@ -17,6 +18,8 @@ export class Hubworld extends Component {
 			</div>
 		);
 =======
+=======
+>>>>>>> 17eac086538fef9a97681b6eb6bcf423b9a497f6
 	<div className = "hubworld">
     	<Hero>
       		<h1> Relics and React </h1>
@@ -48,7 +51,10 @@ export class Hubworld extends Component {
     	</Container>
   	</div>
 	)
+<<<<<<< HEAD
 >>>>>>> b3ed631b9b9a49d95c6241e4eff2e4a24359e097
+=======
+>>>>>>> 17eac086538fef9a97681b6eb6bcf423b9a497f6
 	}
 }
 export default Hubworld;
