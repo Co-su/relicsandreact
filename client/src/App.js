@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-//import continueQuestButton from "./components/continueQuestButton";
-// import Loginpage from "./components/Loginpage.jsx";
-import NewCharBtn from "./components/newCharButton";
+import Loginpage from "./components/Loginpage.jsx";
 import Hubworld from "./components/Hubworld.jsx";
 import Startquest from "./components/Startquest.jsx";
 import Tavern from "./components/Tavern.jsx";
