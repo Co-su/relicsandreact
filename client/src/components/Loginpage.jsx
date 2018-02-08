@@ -1,40 +1,51 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 
-// export class Loginpage extends Component {
-// 	render() {
-// 		return (
-// 			<div className="login">
 
-// 			<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+export class Loginpage extends Component {
 
-// 				<div id="id01" class="modal">
-			  
-// 			  	<form class="modal-content animate" action="/action_page.php">
-// 				    <div class="imgcontainer">
-// 				      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-// 				    </div>
+	addNewPlayer(event){
+		event.preventDefault();
+		console.log(this.refs);
+		let playername = this.refs.playername.value;
+		let password = this.refs.password.value;
 
-// 			    	<div class="container">
-// 				      	<label for="uname"><b>Username</b></label>
-// 				      	<input type="text" placeholder="Enter Username" name="uname" required></input>
+		let player = {
+			playername,
+			password
+		};
 
-// 				      	<label for="psw"><b>Password</b></label>
-// 				      	<input type="password" placeholder="Enter Password" name="psw" required></input>
-				        
-// 				      	<button type="submit">Login</button>
-// 				      	<label>
-// 				        <input type="checkbox" checked="checked" name="remember"> Remember me</input>
-// 				        </label>
-// 			    	</div>
+		let players = this.state.players;
 
-// 			    <div class="container" style="background-color:#f1f1f1">
-// 			      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-// 			      <span class="psw">Forgot <a href="#">password?</a></span>
-// 			    </div>
-// 			  </form>
-// 			</div>
-// 			</div>
-// 		);
-// 	}
-// }
-// export default Loginpage;
+		players.push(player);
+
+		this.setState({
+			players: players
+		})
+	}
+
+
+	constructor(){
+	super();
+	this.addNewPlayer = this.addNewPlayer.bind(this);
+	this.state = {
+		players: []
+	}
+}
+	render() {
+		let players = this.state.players
+		return (
+			<div className="login">
+				<img id="RoRCoCLogo" src="./assets/logo_transparency.png"/>
+				<form class="login-form">
+					<input type="text" ref="playername" placeholder="Enter your player's name." />
+					<input type="password" ref="password" placeholder="Enter your password." />
+					<button onClick={this.addNewPlayer}>Submit</button>
+				</form>
+				<pre>
+				{JSON.stringify(players)}
+				</pre>
+			</div>
+		);
+	}
+}
+export default Loginpage;
