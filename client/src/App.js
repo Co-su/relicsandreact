@@ -24,7 +24,6 @@ class App extends Component {
         <div className="App">
            <Route exact path="/" component = {Landing}/>
            <Route exact path="/startquest" component={Startquest}/>
-           <Route exact path="/hubworld" component={Hubworld}/>
            <Route exact path="/castle" component={Castle}/>
            <Route exact path="/forest" component={Forest}/>
            <Route exact path="/codesrealm" component={Codesrealm}/>
