@@ -70,5 +70,10 @@ body {
 }
 
 .login {
-	
+	background-image: url("./assets/logo_transparency.png");
+}
+
+.login-form {
+    text-align: center;
+    border-style: solid;
 }

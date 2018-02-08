@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import continueQuestButton from "./components/continueQuestButton";
-// import Loginpage from "./components/Loginpage.jsx";
+import Loginpage from "./components/Loginpage.jsx";
 import Hubworld from "./components/Hubworld.jsx";
 import Startquest from "./components/Startquest.jsx";
 import Tavern from "./components/Tavern.jsx";
@@ -22,7 +21,6 @@ class App extends Component {
         <div className="App">
            <Route exact path="/" component = {Hubworld}/>
            <Route exact path="/startquest" component={Startquest}/>
-           <Route exact path="/hubworld" component={Hubworld}/>
            <Route exact path="/castle" component={Castle}/>
            <Route exact path="/forest" component={Forest}/>
            <Route exact path="/codesrealm" component={Codesrealm}/>
