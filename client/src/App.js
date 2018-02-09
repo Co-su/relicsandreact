@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Landing from "./components/pages/landingPage.js";
 import Loginpage from "./components/Loginpage.jsx";
 import Hubworld from "./components/Hubworld.jsx";
 import Startquest from "./components/Startquest.jsx";
@@ -19,7 +20,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-           <Route exact path="/" component = {Hubworld}/>
+           <Route exact path="/" component = {Landing}/>
            <Route exact path="/startquest" component={Startquest}/>
            <Route exact path="/castle" component={Castle}/>
            <Route exact path="/forest" component={Forest}/>
