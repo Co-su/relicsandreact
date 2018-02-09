@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import NewCharBtn from "../../components/newCharBtn";
+import ConQuestBtn from "../../components/conQuestBtn";
 
 
 export class Landing extends Component {
@@ -24,8 +25,9 @@ export class Landing extends Component {
         		  </Col>
       		  </Row>
       		<Row>
-        		<Col size="md-6">
+        		<Col size="md-12" align="center">
               <NewCharBtn />
+              <ConQuestBtn />
             </Col>
       		</Row>
     	  </Container>
