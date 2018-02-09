@@ -5,7 +5,7 @@ export class Startquest extends Component {
 		return (
 			<div>
 				<h1>Begin your Quest</h1>
-					<button class="btn btn-primary btn-success">Start Quest</button>
+					<button class="waves-effect waves-light btn-large">Start Quest</button>
 			</div>
 		);
 	}

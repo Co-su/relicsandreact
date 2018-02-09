@@ -23,18 +23,18 @@ export class Hubworld extends Component {
       		</Row>
       		<Row>
         		<Col size="md-12">
-				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
+				<a class="waves-effect waves-light btn-large">
 					<Link to = "/forest"> Go To The Forest!</Link>
-				</button>
-				<button id = "castleBtn" style = {{margin: 60}}>
+				</a>
+				<a class="waves-effect waves-light btn-large">
 					<Link to = "/castle"> Go To The Castle!</Link>
-				</button>
-				<button id = "tavernBtn" style = {{margin: 60}}>
+				</a>
+				<a class="waves-effect waves-light btn-large">
 					<Link to = "/tavern"> Go To The Tavern!</Link>
-				</button>
-				<button id = "realmBtn" style = {{margin: 60}}>
+				</a>
+				<a class="waves-effect waves-light btn-large">
 					<Link to = "/codesrealm">Go To the Codes Realm!!</Link>
-				</button>
+				</a>
           
         		</Col>
       		</Row>
