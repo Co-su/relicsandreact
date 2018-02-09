@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Hero from "../../components/Hero";
-import Container from "../../components/Container";
-import Row from "../../components/Row";
-import Col from "../../components/Col";
-import NewCharBtn from "../../components/newCharBtn";
-import ConQuestBtn from "../../components/conQuestBtn";
+import Hero from "../../../components/Hero";
+import Container from "../../../components/Container";
+import Row from "../../../components/Row";
+import Col from "../../../components/Col";
+import NewCharBtn from "../../../components/newCharBtn";
+import ConQuestBtn from "../../../components/conQuestBtn";
 
 
 export class Landing extends Component {

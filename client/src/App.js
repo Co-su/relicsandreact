@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Landing from "./components/pages/landingPage.js";
+import Landing from "./components/pages/landingPage/landingPage.js";
 import Loginpage from "./components/Loginpage.jsx";
 import Hubworld from "./components/Hubworld.jsx";
 import Startquest from "./components/Startquest.jsx";
