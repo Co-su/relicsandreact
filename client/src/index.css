@@ -5,8 +5,7 @@ body {
 }
 
 .hubworld {
-	background-image: url("./assets/image.png");
-
+    background-image: url("./assets/image.png");
 
     /* Full height */
     height: 100vh; 
@@ -19,7 +18,7 @@ body {
 }
 
 .codesrealm {
-	background-image: url("./assets/c_ode.jpg");
+    background-image: url("./assets/c_ode.jpg");
 
 
     /* Full height */
@@ -69,6 +68,7 @@ body {
 
 }
 
-.login {
-	
+.login-form {
+    text-align: center;
+    border-style: solid;
 }
