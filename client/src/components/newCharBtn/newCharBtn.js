@@ -20,9 +20,9 @@ export class NewCharBtn extends React.Component {
     return (
       <div>
         <button onClick={this.onOpenModal}>Create a New Character here!</button>
-        <Modal open={open} onClose={this.onCloseModal} medium>
+        <Modal open={open} onClose={this.onCloseModal} little>
           <h2>Complete this form to get started</h2>
-            <form id="signup" name="signup" method="post" action="/hubworld">
+            <form id="signup" name="signup" method="get" action="/hubworld">
 
                 <label for="firstname">Firstname</label>
                 <input name="firstname" type="text" />
