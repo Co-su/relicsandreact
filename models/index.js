@@ -1,7 +1,7 @@
 module.exports = {
-    Users: require("./Users"),
-    Characters: require("./Characters"),
-    Monsters: require("./Monsters"),
-    Npcs: require("./Npcs")
+    users: require("./users.js"),
+    characters: require("./characters.js"),
+    monsters: require("./monsters.js"),
+    npcs: require("./npcs.js")
   };
   

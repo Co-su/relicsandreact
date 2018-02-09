@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 
-var NpcsSchema = new Schema({
+var npcsSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -40,7 +40,7 @@ var NpcsSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Character = mongoose.model("Character", CharacterSchema);
+var Npc = mongoose.model("Npc", npcsSchema);
 
-// Export the Article model
-module.exports = Character;
+// Exports model
+module.exports = Npc;
