@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import Hubworld from "../components/Hubworld.jsx";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 
 export class Forest extends Component {
 
@@ -12,6 +19,7 @@ export class Forest extends Component {
 		specialAttackCounter: 2,
 		enemyAttack: 10,
 		yourTurn: true,
+		hasMushroom: false
 	}
 
 
@@ -25,7 +33,8 @@ export class Forest extends Component {
 	var enemyAttack = 10;
 	var yourTurn = this.state.yourTurn;
 	var gold = this.state.gold;
-	var fight = prompt("You have been challenged by a foe! Type fight to enter battle, or flee to chicken out!");
+	var hasMushroom = this.state.hasMushroom;
+	var fight = prompt("You have been challenged by a foe! Type fight to enter battle, heal to restore your HP, or flee to chicken out!");
 	if (fight === "fight" && yourTurn === true){
 		var pickAttack = prompt("type special attack or physical attack");
 		if (pickAttack === "special attack" && specialAttackCounter > 0){
@@ -37,29 +46,29 @@ export class Forest extends Component {
 			alert("You have " + specialAttackCounter + " special attacks left!");
 			if (specialAttackCounter === 0){
 				alert("You have no special attacks left!");
+			if (enemyHP === 0){
+				alert("Enemy defeated! Mushroom acquired!");
+				hasMushroom = true;
+				this.setState({hasMushroom});
+			}
 			}yourTurn = false;
 			this.setState({yourTurn});
-
-			
-			// var yourTurn = false;
-			// if (yourTurn = false){
-			// 	yourHP = yourHP - enemyAttack;
-			// 	alert("your hp is now " + yourHP)
-			// 	yourTurn = true;
-			// }
 		}else if (pickAttack === "attack" && yourTurn === true){
 			enemyHP = enemyHP - yourAttack;
 			this.setState({ enemyHP });
 			alert("Enemy hp is now " + enemyHP + "!");
-			// var yourTurn = false;
-			// if (yourTurn = false){
-			// 	yourHP = yourHP - enemyAttack;
-			// 	yourTurn = true;
-			// }
+			yourTurn = false;
+			this.setState({yourTurn});
+			if (enemyHP === 0){
+				alert("Enemy defeated! Mushroom acquired!");
+				hasMushroom = true;
+				this.setState({hasMushroom});
+			}
 		}else if (specialAttackCounter === 0){
 		alert("You have no special attacks left!");
 	}
 	}else if (fight === "heal"){
+		alert("You recovered 10 HP! Your current health level is " + yourHP + "." + "You now have " + yourHealingItems + " left.");
 		yourHP = yourHP + 10;
 		yourHealingItems = yourHealingItems - 1;
 		this.setState({yourHP});
@@ -73,6 +82,7 @@ export class Forest extends Component {
 		this.setState({gold});
 		if(gold === 0){
 			alert("You have no more money! You shouldn't be in the forest! Go back to town to get supplies!");
+			<Route exact path="/hubworld" component = {Hubworld}/>
 
 		}
 	}else if (yourTurn === false){
@@ -80,8 +90,7 @@ export class Forest extends Component {
 		yourHP = yourHP - enemyAttack;
 		this.setState({yourHP});
 		yourTurn = true
-		this.setState({yourTurn});
-		
+		this.setState({yourTurn});	
 	}
 }
 
