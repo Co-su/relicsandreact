@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 
-var CharacterSchema = new Schema({
+var characterSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -40,7 +40,7 @@ var CharacterSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Character = mongoose.model("Character", CharacterSchema);
+var Character = mongoose.model("Character", characterSchema);
 
-// Export the Article model
+// Exports model
 module.exports = Character;
