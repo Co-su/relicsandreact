@@ -4,15 +4,17 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import LogoImage from "../assets/logoTransparencyOffwhite.png";
 
 export class Hubworld extends Component {
 	render() {
 		return (
 	<div className = "hubworld">
-    	<Hero>
-      		<h1> Relics and React </h1>
-			<h2> Call of C'Ode</h2>
+		<Link to = "/">
+    	<Hero backgroundImage = {LogoImage}>
+
     	</Hero>
+		</Link>
     	<Container>
       		<Row>
         		<Col size="md-12" align = "center">
