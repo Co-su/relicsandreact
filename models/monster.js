@@ -1,10 +1,10 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+//Mongoose Scheme reference
+const Schema = mongoose.Schema;
 
 
-var monstersSchema = new Schema({
+const monsterSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -40,7 +40,7 @@ var monstersSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Monster = mongoose.model("Monster", monstersSchema);
+const Monster = mongoose.model("Monster", monsterSchema);
 
 // Exports model
 module.exports = Monster;

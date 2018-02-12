@@ -1,10 +1,10 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+//Mongoose Scheme reference
+const Schema = mongoose.Schema;
 
 
-var npcsSchema = new Schema({
+const npcSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -40,7 +40,7 @@ var npcsSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Npc = mongoose.model("Npc", npcsSchema);
+const Npc = mongoose.model("Npc", npcSchema);
 
 // Exports model
 module.exports = Npc;

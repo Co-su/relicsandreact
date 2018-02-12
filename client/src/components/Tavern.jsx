@@ -7,8 +7,8 @@ export class Tavern extends Component {
 
 
 hearRumor = (e) => {
-	var rumor = ["I hear that C'ode is taking over the realm again. He has been asleep for thousands of years...", "I hear that the king's daughter, C'omma, is missing - that means that this game's code could crash!", "I hear that the magic mushrooms in the forest will grant you magical powers...I wonder if they have any use for defeating C'ode?"];
-	var pickRumor = Math.floor(Math.random()*rumor.length);
+	const rumor = ["I hear that C'ode is taking over the realm again. He has been asleep for thousands of years...", "I hear that the king's daughter, C'omma, is missing - that means that this game's code could crash!", "I hear that the magic mushrooms in the forest will grant you magical powers...I wonder if they have any use for defeating C'ode?"];
+	const pickRumor = Math.floor(Math.random()*rumor.length);
 	if(pickRumor === 0){
 		alert("It's just a rumor, but... " + rumor[0]);
 	}else if(pickRumor === 1){
@@ -20,8 +20,8 @@ hearRumor = (e) => {
 }
 
 offerADrink = (e) => {
-	var gold = this.state.gold;
-	var drinkies = prompt("Would you like a flagon of ale? What's your poison?");
+	const gold = this.state.gold;
+	const drinkies = prompt("Would you like a flagon of ale? What's your poison?");
 	if(drinkies === "beer"){
 		alert("that will be ten gold!");
 		gold = gold - 10;

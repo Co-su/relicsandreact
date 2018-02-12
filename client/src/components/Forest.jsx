@@ -16,18 +16,18 @@ export class Forest extends Component {
 
 
 	startFight = (e) => {
-	var yourHealingItems = this.state.yourHealingItems;
-	var yourHP = this.state.yourHP;
-	var enemyHP = this.state.enemyHP;
-	var yourAttack = 10;
-	var yourSpecialAttack = 15;
-	var specialAttackCounter = this.state.specialAttackCounter;
-	var enemyAttack = 10;
-	var yourTurn = this.state.yourTurn;
-	var gold = this.state.gold;
-	var fight = prompt("You have been challenged by a foe! Type fight to enter battle, or flee to chicken out!");
+	const yourHealingItems = this.state.yourHealingItems;
+	const yourHP = this.state.yourHP;
+	const enemyHP = this.state.enemyHP;
+	const yourAttack = 10;
+	const yourSpecialAttack = 15;
+	const specialAttackCounter = this.state.specialAttackCounter;
+	const enemyAttack = 10;
+	const yourTurn = this.state.yourTurn;
+	const gold = this.state.gold;
+	const fight = prompt("You have been challenged by a foe! Type fight to enter battle, or flee to chicken out!");
 	if (fight === "fight" && yourTurn === true){
-		var pickAttack = prompt("type special attack or physical attack");
+		const pickAttack = prompt("type special attack or physical attack");
 		if (pickAttack === "special attack" && specialAttackCounter > 0){
 			enemyHP = enemyHP - yourSpecialAttack;
 			this.setState({ enemyHP });
@@ -41,7 +41,7 @@ export class Forest extends Component {
 			this.setState({yourTurn});
 
 			
-			// var yourTurn = false;
+			// const yourTurn = false;
 			// if (yourTurn = false){
 			// 	yourHP = yourHP - enemyAttack;
 			// 	alert("your hp is now " + yourHP)
@@ -51,7 +51,7 @@ export class Forest extends Component {
 			enemyHP = enemyHP - yourAttack;
 			this.setState({ enemyHP });
 			alert("Enemy hp is now " + enemyHP + "!");
-			// var yourTurn = false;
+			// const yourTurn = false;
 			// if (yourTurn = false){
 			// 	yourHP = yourHP - enemyAttack;
 			// 	yourTurn = true;
