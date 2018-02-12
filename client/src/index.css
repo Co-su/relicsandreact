@@ -77,3 +77,27 @@ body {
     background-color: red;
     height: 10vh;
 }
+
+#tavernLogo {
+    width: 150px;
+    height: auto;
+}
+
+button {
+    background-color: green;
+}
+
+#castleLogo {
+    width: 150px;
+    height: auto;
+}
+
+#forestLogo {
+    width: 150px;
+    height: auto;
+}
+
+#codesRealmLogo {
+    width: 150px;
+    height: auto;
+}

@@ -5,11 +5,33 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import LogoImage from "../assets/logoTransparencyOffwhite.png";
+import ThemeSong from "../assets/RaRCoCmpt.mp3";
+import TavernIcon from "../components/tavernIcon.png";
+import CastleIcon from "../components/castleIcon .png";
+import ForestIcon from "../components/forestIcon.png";
+import CodesrealmIcon from "../assets/codesRealmIcon.png";
+var Sound = require('react-sound').default;
+
+// playThemeSong = () =>{
+
+// }
 
 export class Hubworld extends Component {
 	render() {
 		return (
+
+
 	<div className = "hubworld">
+
+<Sound
+      url={ThemeSong}
+      playStatus={Sound.status.PLAYING}
+      playFromPosition={300 /* in milliseconds */}
+      onLoading={this.handleSongLoading}
+      onPlaying={this.handleSongPlaying}
+      onFinishedPlaying={this.handleSongFinishedPlaying}
+    />
+
 		<Link to = "/">
     	<Hero backgroundImage = {LogoImage}>
 
@@ -23,18 +45,20 @@ export class Hubworld extends Component {
       		</Row>
       		<Row>
         		<Col size="md-12">
+				<span>
 				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
-					<Link to = "/forest"> Go To The Forest!</Link>
+					<Link to = "/forest"><img id="forestLogo" src={ForestIcon}/></Link>
 				</button>
 				<button id = "castleBtn" style = {{margin: 60}}>
-					<Link to = "/castle"> Go To The Castle!</Link>
+					<Link to = "/castle"><img id="castleLogo" src={CastleIcon}/></Link>
 				</button>
 				<button id = "tavernBtn" style = {{margin: 60}}>
-					<Link to = "/tavern"> Go To The Tavern!</Link>
+					<Link to = "/tavern"><img id="tavernLogo" src={TavernIcon}/></Link>
 				</button>
 				<button id = "realmBtn" style = {{margin: 60}}>
-					<Link to = "/codesrealm">Go To the Codes Realm!!</Link>
+					<Link to = "/codesrealm"><img id="codesRealmLogo" src={CodesrealmIcon}/></Link>
 				</button>
+				</span>
           
         		</Col>
       		</Row>
