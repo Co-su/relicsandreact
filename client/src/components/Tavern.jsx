@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import TavernIcon from "../components/tavernIcon.png";
+
 import TavernOwner from "../assets/Tavern_Owner.jpg";
 import TavernCust from "../assets/tavern_customer.jpg";
 import Hero from "../components/Hero";
@@ -9,7 +12,9 @@ import BuyDrink from "../components/BuyDrink";
 import Modal from 'react-responsive-modal';
 
 
+
 export class Tavern extends Component {
+
 
 	render() {
 		return (
@@ -29,4 +34,5 @@ export class Tavern extends Component {
 	}
   
 }
+
 export default Tavern;
