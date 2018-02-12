@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import TavernIcon from "../components/tavernIcon.png";
+
 import TavernOwner from "../assets/Tavern_Owner.jpg";
 import TavernCust from "../assets/tavern_customer.jpg";
 import Hero from "../components/Hero";
@@ -23,10 +26,23 @@ const buyDrink = () => {
 	return(buyDrink);		
 }
 
+
 export class Tavern extends Component {
 
 	state = {
-    gold: 100
+		yourGP: 100,
+		yourHealingItems: 5,
+		yourCON: 100,
+		enemyCON: 100,
+		yourSTR: 10,
+		yourWIS: 20,
+		specialAttackCounter: 2,
+		enemySTR: 10,
+		yourTurn: true,
+		hasMushroom: false,
+		yourDEX: 10,
+		yourCHAR: 10,
+		inebriationLevel: 0
   };
 
 
@@ -44,15 +60,43 @@ hearRumor = (e) => {
 }
 
 offerADrink = (e) => {
-	var gold = this.state.gold;
-	var drinkies = prompt("Would you like a flagon of ale? What's your poison?");
+	var yourGP = this.state.yourGP;
+	var inebriationLevel = this.state.inebriationLevel;
+	var yourHealingItems = this.state.yourHealingItems;
+	var	yourCON = this.state.yourCON;
+	var	enemyCON = this.state.enemyCON;
+	var	yourSTR = this.state.yourSTR;
+	var	yourWIS = this.state.yourWIS;
+	var	specialAttackCounter = this.state.yourSpecialAttackCounter;
+	var	enemySTR = this.state.enemySTR;
+	var	yourTurn = this.state.yourTurn;
+	var	hasMushroom = this.state.hasMushroom;
+	var	yourDEX = this.state.yourDEX;
+	var	yourCHAR = this.state.yourCHAR;
+	var drinkies = prompt("Would you like a flagon of ale? What's your poison, beer, wine, or moonshine?");
 	if(drinkies === "beer"){
 		alert("that will be ten gold!");
-		gold = gold - 10;
-		this.setState({ gold });
-		alert("You have " + gold + " gold left!");
+		yourGP = yourGP- 10;
+		inebriationLevel = inebriationLevel + 1;
+		this.setState({ yourGP });
+		this.setState({ inebriationLevel });
+		alert("You have " + yourGP + " gold left!");
 	}else if(drinkies === "wine"){
 		alert("that'll be 15 gold!");
+
+		yourGP = yourGP - 15;
+		inebriationLevel = inebriationLevel + 1.5;
+		this.setState({ yourGP });
+		this.setState({ inebriationLevel });
+		alert("You have " + yourGP + " gold left!");
+	}else if(drinkies === "moonshine"){
+		alert("that'll be 30 gold!");
+		yourGP = yourGP - 20;
+		inebriationLevel = inebriationLevel + 2;
+		this.setState({ yourGP });
+		this.setState({inebriationLevel});
+		alert("You have + " + yourGP + " gold left!")
+
 		gold = gold - 15;
 		this.setState({ gold });
 		alert("You have " + gold + " gold left!");
@@ -63,7 +107,15 @@ offerADrink = (e) => {
 		alert("You have " + gold + " gold left!")
 	}else{
 		alert("get outta here!");
+	}if (inebriationLevel >=3){
+		yourSTR = yourSTR + 20;
+		yourDEX = yourDEX - 20;
 	}
+	// isDrunk = () => {
+	// 	if(inebriationLevel >= 3){
+
+	// 	}
+	
 }
 
 
@@ -85,4 +137,5 @@ offerADrink = (e) => {
 	}
   
 }
+
 export default Tavern;
