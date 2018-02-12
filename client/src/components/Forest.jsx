@@ -65,6 +65,23 @@ export class Forest extends Component {
 			}
 			}yourTurn = false;
 			this.setState({yourTurn});
+      
+      
+			// const yourTurn = false;
+			// if (yourTurn = false){
+			// 	yourHP = yourHP - enemyAttack;
+			// 	alert("your hp is now " + yourHP)
+			// 	yourTurn = true;
+			// }
+		}else if (pickAttack === "attack" && yourTurn === true){
+			enemyHP = enemyHP - yourAttack;
+			this.setState({ enemyHP });
+			alert("Enemy hp is now " + enemyHP + "!");
+			// const yourTurn = false;
+			// if (yourTurn = false){
+			// 	yourHP = yourHP - enemyAttack;
+			// 	yourTurn = true;
+			// }
 		}else if (pickAttack === "attack" && yourTurn === true){
 			enemyCON = enemyCON - yourSTR;
 			this.setState({ enemyCON });
