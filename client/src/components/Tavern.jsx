@@ -1,5 +1,32 @@
 import React, { Component } from 'react';
+
 import TavernIcon from "../components/tavernIcon.png";
+
+import TavernOwner from "../assets/Tavern_Owner.jpg";
+import TavernCust from "../assets/tavern_customer.jpg";
+import Hero from "../components/Hero";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
+import BuyDrink from "../components/BuyDrink";
+import Modal from 'react-responsive-modal';
+
+const buyDrink = () => {
+
+	
+	const { open } = this.state;
+	<Modal open={open} onClose={this.onCloseModal} little>
+		 <div>
+			<button onClick="/tavern">Nevermind, im not thirsty</button>
+			<button onClick={this.onOpenModal}>Buy a Drink</button>
+			<h2>What would you like?</h2>
+			<button id = "drinkBtn" onClick={this.OfferDrink} value = "beer">Have a beer</button>
+		 </div>
+	</Modal>
+	return(buyDrink);		
+}
+
+
 export class Tavern extends Component {
 
 	state = {
@@ -56,6 +83,7 @@ offerADrink = (e) => {
 		alert("You have " + yourGP + " gold left!");
 	}else if(drinkies === "wine"){
 		alert("that'll be 15 gold!");
+
 		yourGP = yourGP - 15;
 		inebriationLevel = inebriationLevel + 1.5;
 		this.setState({ yourGP });
@@ -68,6 +96,15 @@ offerADrink = (e) => {
 		this.setState({ yourGP });
 		this.setState({inebriationLevel});
 		alert("You have + " + yourGP + " gold left!")
+
+		gold = gold - 15;
+		this.setState({ gold });
+		alert("You have " + gold + " gold left!");
+	}else if(drinkies === "moonshine"){
+		alert("that'll be 20 gold!");
+		gold = gold - 20;
+		this.setState({ gold });
+		alert("You have " + gold + " gold left!")
 	}else{
 		alert("get outta here!");
 	}if (inebriationLevel >=3){
@@ -80,16 +117,25 @@ offerADrink = (e) => {
 	// 	}
 	
 }
+
+
 	render() {
 		return (
 			<div className="tavern">
-				<div className="tavern-owner" onClick={this.offerADrink}>
-				<img src={TavernIcon}/>
-				</div>
-				<div className="tavern-patron" onClick={this.hearRumor}></div>
+				<Hero>
+					<h1>Welcome to the Tavern!</h1>
+					<h2>Grab a drink from the owner or 
+						Get a rumor from a fellow patron</h2>
+				</Hero>
+				<Container>
+					<Row>
+						<BuyDrink />
+					</Row>
+				</Container>
 			</div>
 		);
 	}
+  
 }
 
 export default Tavern;
