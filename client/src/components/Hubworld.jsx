@@ -10,11 +10,9 @@ export class Hubworld extends Component {
 	render() {
 		return (
 	<div className = "hubworld">
-		<Link to = "/">
-    	<Hero backgroundImage = {LogoImage}>
+		<Hero backgroundImage = {LogoImage}>
 
     	</Hero>
-		</Link>
     	<Container>
       		<Row>
         		<Col size="md-12" align = "center">
