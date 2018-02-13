@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Hubworld from "../components/Hubworld.jsx";
-import Enemies from "../assets/rpg_enemies.png";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Goblin from "../assets/Troop_Goblin.png";
+import FightGoblin from "../components/ForestFight";
 import Modal from 'react-responsive-modal';
 // var db = require("./models");
 // import {
@@ -130,7 +130,7 @@ export class Forest extends Component {
 			<div className="forest">
 			<div class={Row}>
 			<div class={Col}>
-			<img src={Enemies} onClick={this.startFight}/>	
+			<img src={Goblin} onClick={this.fightEnemy}/>	
 			</div>
 			</div>
 			</div>
