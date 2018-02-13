@@ -34,7 +34,8 @@ export class Hubworld extends Component {
 
 		<Link to = "/">
     	<Hero backgroundImage = {LogoImage}>
-    	</Hero>
+		</Hero>
+		</Link>
     	<Container>
       		<Row>
         		<Col size="md-12" align = "center">
