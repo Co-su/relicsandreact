@@ -1,4 +1,5 @@
 //Dependencies
+
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -8,6 +9,7 @@ const bodyParser = require("body-parser");
 const db = require("./models/");
 const jwt = require("jsonwebtoken");
 const mongoUrl = "mongodb://localhost/relicsandreact";
+
 
 // Only load .env file if not in production
 if ( process.env.NODE_ENV != "production" ) {
@@ -60,11 +62,13 @@ app.post("/auth",(req, res)=> {
   
         return res.json( { access_token: token });
 
+
       });
     })
     .catch(err => {
       res.json(err);
     });
+
 })
 
 app.post("/user", (req, res) => {
