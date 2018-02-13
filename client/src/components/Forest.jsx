@@ -32,7 +32,7 @@ import Modal from 'react-responsive-modal';
 export class Forest extends Component {
 
 // 	state = {
-// 		yourGP: 100,
+// 		gold: 100,
 // 		yourHealingItems: 5,
 // 		yourCON: 100,
 // 		enemyCON: 100,
@@ -57,7 +57,7 @@ export class Forest extends Component {
 // 	var specialAttackCounter = this.state.specialAttackCounter;
 // 	var enemySTR = 10;
 // 	var yourTurn = this.state.yourTurn;
-// 	var yourGP = this.state.GP;
+// 	var gold = this.state.GP;
 // 	var hasMushroom = this.state.hasMushroom;
 // 	var yourDEX = this.state.yourDEX;
 // 	var fight = prompt("You have been challenged by a foe! Type fight to enter battle, heal to restore your HP, or flee to chicken out!");
@@ -108,10 +108,10 @@ export class Forest extends Component {
 // 			alert:("Out of healing items!");
 // 		}
 // 	}else if (fight === "flee"){
-// 		alert("You fled in fear! While escaping, you dropped 20 gold! Now you have " + yourGP + "left!");
-// 		yourGP = yourGP - 20;
-// 		this.setState({yourGP});
-// 		if(yourGP === 0){
+// 		alert("You fled in fear! While escaping, you dropped 20 gold! Now you have " + gold + "left!");
+// 		gold = gold - 20;
+// 		this.setState({gold});
+// 		if(gold === 0){
 // 			alert("You have no more money! You shouldn't be in the forest! Go back to town to get supplies!");
 // 			// <Route exact path="/hubworld" component = {Hubworld}/>
 

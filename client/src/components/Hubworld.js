@@ -10,13 +10,13 @@ import TavernIcon from "../components/tavernIcon.png";
 import CastleIcon from "../components/castleIcon .png";
 import ForestIcon from "../components/forestIcon.png";
 import CodesrealmIcon from "../assets/codesRealmIcon.png";
-import Sound from "react-sound";
+import Sound from 'react-sound';
 
 export class Hubworld extends Component {
 	render() {
 		return (
-	<div className = "hubworld">
-	<Sound
+	<div className="hubworld">
+		<Sound
 		url={ThemeSong}
 		playStatus={Sound.status.PLAYING}
 		playFromPosition={300 /* in milliseconds */}
@@ -24,12 +24,10 @@ export class Hubworld extends Component {
 		onPlaying={this.handleSongPlaying}
 		onFinishedPlaying={this.handleSongFinishedPlaying}
 		/>
-
-
-		<Link to = "/">Home</Link>
-    	<Hero backgroundImage = {LogoImage} />
-
-		<Container>
+		<Link to="/">Home</Link>
+    	<Hero backgroundImage = {LogoImage}>
+    	</Hero>
+    	<Container>
       		<Row>
         		<Col size="md-12" align = "center">
           			<h1 style = {{fontSize: 60}}>Welcome To HubLanta!</h1>
@@ -56,13 +54,7 @@ export class Hubworld extends Component {
       		</Row>
     	</Container>
   	</div>
-	)
+	);
 	}
 }
 export default Hubworld;
-
-
-
-
-		
-    	
