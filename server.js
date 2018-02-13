@@ -9,8 +9,10 @@ const db = require("./models/");
 const jwt = require("jsonwebtoken");
 const mongoUrl = "mongodb://localhost/relicsandreact";
 
-// TODO: REMOVE prior to production!!!!
-const ENV = require("./.env.local");
+// Only load .env file if not in production
+if ( process.env.NODE_ENV != "production" ) {
+  require("dotenv").config();
+}
 
 mongoose.Promise = Promise;
 // Serve up static assets (usually on heroku)
@@ -28,16 +30,25 @@ mongoose.connect(mongoUrl, err => {
   console.log(err || `MongoDB connected at ${mongoUrl}`);
 });
 
-app.post("/api/auth",(req, res)=> {
+// Set up middleware to authenticate user on request to /api routes.
+app.use( "/api", ( req, res, next ) => {
+  const token = req.headers.authorization;
+  const authenticated = jwt.verify( token, process.env.SECRET, ( err, decoded ) => {
+    if ( err ) return res.status(403).json(err);
+    next();
+  });
+});
+
+app.post("/auth",(req, res)=> {
   db.User.findOne({ username: req.body.username })
     .then(user => {
       // TODO: improve error message
-      if ( !user ) return res.send( "User not found." );
+      if ( !user ) return res.status(404).send( "User not found." );
 
       return  user.comparePassword( req.body.password, ( passErr, isMatch ) => {
 
         // TODO: send proper Express error with appropriate status code
-        if ( !isMatch ) return res.send( "Incorrect email or password." );
+        if ( !isMatch ) return res.status(403).send( "Incorrect email or password." );
 
         // Sign JWT
         const payload = {
@@ -56,7 +67,7 @@ app.post("/api/auth",(req, res)=> {
     });
 })
 
-app.post("/api/user", (req, res) => {
+app.post("/user", (req, res) => {
   db.User.create({
     username: req.body.username,
     password: req.body.password,
