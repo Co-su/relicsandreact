@@ -3,28 +3,12 @@ import ReactDOM from 'react-dom';
 import Notifications, {notify} from 'react-notify-toast';
 import Modal from 'react-responsive-modal';
 import TavernOwner from "../../assets/Tavern_Owner.jpg";
-import TavernOwnerVoice from "../../assets/Tavern Owner 2.mp3";
-var Sound = require('react-sound').default;
-
-
 
  
 class BuyDrink extends Component {
   state = {
     open: false,
-    yourGP: 100,
-    inebriationLevel: 0,
-    yourHealingItems: 5,
-		yourCON: 100,
-		enemyCON: 100,
-		yourSTR: 10,
-		yourWIS: 20,
-		specialAttackCounter: 2,
-		enemySTR: 10,
-		yourTurn: true,
-		hasMushroom: false,
-		yourDEX: 10,
-		yourCHAR: 10,
+    yourGP: 100
   };
  
   onOpenModal = () => {

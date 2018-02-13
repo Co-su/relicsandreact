@@ -7,20 +7,34 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const db = require("./models/users")
 const mongoUrl = "mongodb://localhost/relicsandreact";
+var express = require("express");
+var path = require("path");
+var PORT = process.env.PORT || 3001;
+var app = express();
+var mongoose = require("mongoose");
+var bodyParser = require("body-parser");
+var db = require("./models")
+var mongoUrl = "mongodb://localhost/relicsandreact";
+
+
 mongoose.Promise = Promise;
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+//Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-
+//Mongoose connection to DB
 mongoose.connect(mongoUrl, err => {
   console.log(err ||  `MongoDB connected at ${mongoUrl}`);
-})
+});
 
+
+
+//test to post to the DB
 app.post('/api/game', (req,res) => {
 
   console.log(req.body)
