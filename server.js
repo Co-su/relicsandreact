@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const {User} = require("./models/users")
+const db = require("./models/users")
 const mongoUrl = "mongodb://localhost/relicsandreact";
 mongoose.Promise = Promise;
 // Serve up static assets (usually on heroku)
@@ -25,9 +25,10 @@ app.post('/api/game', (req,res) => {
 
   console.log(req.body)
  console.log('i work')
-    User.create({
+    db.user.create({
         userName:req.body.userName,
-        password:req.body.password
+        password:req.body.password,
+        quest:req.body.quest
       })
       .then(res => {
         console.log(res)

@@ -22,22 +22,20 @@ export class Hubworld extends Component {
 
 
 	<div className = "hubworld">
-
 <Sound
-      url={ThemeSong}
-      playStatus={Sound.status.PLAYING}
-      playFromPosition={300 /* in milliseconds */}
-      onLoading={this.handleSongLoading}
-      onPlaying={this.handleSongPlaying}
-      onFinishedPlaying={this.handleSongFinishedPlaying}
-    />
+		url={ThemeSong}
+		playStatus={Sound.status.PLAYING}
+		playFromPosition={300 /* in milliseconds */}
+		onLoading={this.handleSongLoading}
+		onPlaying={this.handleSongPlaying}
+		onFinishedPlaying={this.handleSongFinishedPlaying}
+		/>
 
-		<Link to = "/">
-    	<Hero backgroundImage = {LogoImage}>
 
-    	</Hero>
-		</Link>
-    	<Container>
+<Link to = "/"> </Link>
+    	<Hero backgroundImage = {LogoImage} />
+
+		<Container>
       		<Row>
         		<Col size="md-12" align = "center">
           			<h1 style = {{fontSize: 60}}>Welcome To HubLanta!</h1>
@@ -63,8 +61,16 @@ export class Hubworld extends Component {
         		</Col>
       		</Row>
     	</Container>
+
+	
   	</div>
 	)
 	}
 }
 export default Hubworld;
+
+
+
+
+		
+    	

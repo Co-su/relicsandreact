@@ -3,11 +3,30 @@ import Hubworld from "../components/Hubworld.jsx";
 import Enemies from "../assets/rpg_enemies.png";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import Goblin from "../assets/Troop_Goblin.png";
+import Modal from 'react-responsive-modal';
+// var db = require("./models");
 // import {
 //   BrowserRouter as Router,
 //   Route,
 //   Link
 // } from 'react-router-dom'
+
+const fightEnemy = () => {
+
+	
+const { open } = this.state;
+<Modal open={open} onClose={this.onCloseModal} little>
+	 <div>
+		<button onClick="/forest">Fight</button>
+		<button onClick={this.onOpenModal}>Heal</button>
+		<button onClick={this.onOpenModal}>Flee</button>
+		<h2>You have been challenged to battle! What will you do?</h2>
+		<button id = "fightBtn" onClick={this.FightEnemy} value = "fight">Fight</button>
+	 </div>
+</Modal>
+return(fightEnemy);		
+}
 
 
 export class Forest extends Component {
