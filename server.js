@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
+//Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -56,7 +56,7 @@ app.post("/api/auth",(req, res)=> {
     });
 })
 
-app.post("/api/users", (req, res) => {
+app.post("/api/user", (req, res) => {
   db.User.create({
     username: req.body.username,
     password: req.body.password,
