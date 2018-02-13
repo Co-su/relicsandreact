@@ -5,7 +5,7 @@ var PORT = process.env.PORT || 3001;
 var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-var User = require("./models")
+var db = require("./models")
 var mongoUrl = "mongodb://localhost/relicsandreact";
 
 
@@ -31,9 +31,10 @@ app.post('/api/game', (req,res) => {
 
   console.log(req.body)
  console.log('i work')
-    User.create({
+    db.user.create({
         userName:req.body.userName,
-        password:req.body.password
+        password:req.body.password,
+        quest:req.body.quest
       })
       .then(res => {
         console.log(res)
