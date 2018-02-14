@@ -10,13 +10,13 @@ import TavernIcon from "../components/tavernIcon.png";
 import CastleIcon from "../components/castleIcon .png";
 import ForestIcon from "../components/forestIcon.png";
 import CodesrealmIcon from "../assets/codesRealmIcon.png";
-import Sound from "react-sound";
+import Sound from 'react-sound';
 
 export class Hubworld extends Component {
 	render() {
 		return (
-	<div className = "hubworld">
-	<Sound
+	<div className="hubworld">
+		<Sound
 		url={ThemeSong}
 		playStatus={Sound.status.PLAYING}
 		playFromPosition={300 /* in milliseconds */}
@@ -24,12 +24,10 @@ export class Hubworld extends Component {
 		onPlaying={this.handleSongPlaying}
 		onFinishedPlaying={this.handleSongFinishedPlaying}
 		/>
-
-
-		<Hero backgroundImage = {LogoImage}>
-		</Hero>
-
-		<Container>
+		<Link to="/">Home</Link>
+    	<Hero backgroundImage = {LogoImage}>
+    	</Hero>
+    	<Container>
       		<Row>
         		<Col size="md-12" align = "center">
           			<h1 style = {{fontSize: 60}}>Welcome To HubLanta!</h1>
@@ -41,13 +39,13 @@ export class Hubworld extends Component {
 				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
 					<Link to = "/forest"><img id="forestLogo" src={ForestIcon}/></Link>
 				</button>
-				<button id = "castleBtn" style = {{margin: 60, marginLeft: 50}}>
+				<button id = "castleBtn" style = {{margin: 60}}>
 					<Link to = "/castle"><img id="castleLogo" src={CastleIcon}/></Link>
 				</button>
-				<button id = "tavernBtn" style = {{margin: 60, marginLeft:50}}>
+				<button id = "tavernBtn" style = {{margin: 60}}>
 					<Link to = "/tavern"><img id="tavernLogo" src={TavernIcon}/></Link>
 				</button>
-				<button id = "realmBtn" style = {{margin: 60, marginLeft:50}}>
+				<button id = "realmBtn" style = {{margin: 60}}>
 					<Link to = "/codesrealm"><img id="codesRealmLogo" src={CodesrealmIcon}/></Link>
 				</button>
 				</span>
@@ -56,13 +54,7 @@ export class Hubworld extends Component {
       		</Row>
     	</Container>
   	</div>
-	)
+	);
 	}
 }
 export default Hubworld;
-
-
-
-
-		
-    	
