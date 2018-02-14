@@ -70,70 +70,7 @@ class ForestFight extends Component {
           }
         }
       }
-    //     else if (yourTurn === false){
-    //         yourCON = yourCON - enemySTR;
-    //         this.setState({yourCON});
-    //         yourTurn = true;
-    //         this.setState({yourTurn});
-    //       }
-         
-    //     }else if (pickAttack === "attack" && yourTurn === true){
-    //       enemyCON = enemyCON - yourSTR;
-    //       this.setState({ enemyCON });
-    //       alert("Enemy hp is now " + enemyCON + "!");
-    //       yourTurn = false;
-    //       this.setState({yourTurn});
-    //       if (enemyCON === 0){
-    //         alert("Enemy defeated! Mushroom acquired!");
-    //         hasMushroom = true;
-    //         this.setState({hasMushroom});
-    //       }
-    //     }else if (specialAttackCounter === 0){
-    //     alert("You have no special attacks left!");
-    //   }
-    //   }else if (fight === "heal"){
-    //     alert("You recovered 10 HP! Your current health level is " + yourCON + "." + "You now have " + yourHealingItems + " left.");
-    //     yourCON = yourCON + 10;
-    //     yourHealingItems = yourHealingItems - 1;
-    //     this.setState({yourCON});
-    //     this.setState({yourHealingItems});
-    //     if (yourHealingItems === 0){
-    //       alert:("Out of healing items!");
-    //     }
-  
-    // fight = () => {
-    //   this.setState ({open: false})
-    //   let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-    //   let gold = this.state.gold;
-    //   let inebriationLevel = this.state.inebriationLevel;
-    //   let yourDEX = this.state.yourDEX;
-    //   let yourSTR = this.state.yourSTR;
-    //   notify.show("That will cost 20 gold peices!","success", 3000, "myColor")
-    //   gold = gold-20;
-    //   inebriationLevel = inebriationLevel + 2;
-    //   this.setState({gold});
-    //   this.setState({inebriationLevel});
-    //   notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-    // }
-      
-    //   }else if (fight === "flee"){
-    //     alert("You fled in fear! While escaping, you dropped 20 gold! Now you have " + gold + "left!");
-    //     gold = gold - 20;
-    //     this.setState({gold});
-    //     if(gold === 0){
-    //       alert("You have no more money! You shouldn't be in the forest! Go back to town to get supplies!");
-    //       // <Route exact path="/hubworld" component = {Hubworld}/>
-    
-    //     }
-    //   }else if (yourTurn === false){
-    //     alert("enemy attacked you for " + enemySTR + " damage!");
-    //     yourCON = yourCON - enemySTR;
-    //     this.setState({yourCON});
-    //     yourTurn = true
-    //     this.setState({yourTurn});	
-    //   }
-    // }
-      
+
  
 render() {
   const { open } = this.state;
