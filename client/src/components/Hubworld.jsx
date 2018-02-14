@@ -38,7 +38,7 @@ export class Hubworld extends Component {
       		<Row>
         		<Col size="md-12">
 				<span>
-				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
+				<button id = "forestBtn" style = {{margin: 60, marginLeft: 130}}>
 					<Link to = "/forest"><img id="forestLogo" src={ForestIcon}/></Link>
 				</button>
 				<button id = "castleBtn" style = {{margin: 60, marginLeft: 50}}>
