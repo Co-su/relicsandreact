@@ -26,8 +26,8 @@ export class Hubworld extends Component {
 		/>
 
 
-		<Link to = "/">Home</Link>
-    	<Hero backgroundImage = {LogoImage} />
+		<Hero backgroundImage = {LogoImage}>
+		</Hero>
 
 		<Container>
       		<Row>
@@ -41,13 +41,13 @@ export class Hubworld extends Component {
 				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
 					<Link to = "/forest"><img id="forestLogo" src={ForestIcon}/></Link>
 				</button>
-				<button id = "castleBtn" style = {{margin: 60}}>
+				<button id = "castleBtn" style = {{margin: 60, marginLeft: 50}}>
 					<Link to = "/castle"><img id="castleLogo" src={CastleIcon}/></Link>
 				</button>
-				<button id = "tavernBtn" style = {{margin: 60}}>
+				<button id = "tavernBtn" style = {{margin: 60, marginLeft:50}}>
 					<Link to = "/tavern"><img id="tavernLogo" src={TavernIcon}/></Link>
 				</button>
-				<button id = "realmBtn" style = {{margin: 60}}>
+				<button id = "realmBtn" style = {{margin: 60, marginLeft:50}}>
 					<Link to = "/codesrealm"><img id="codesRealmLogo" src={CodesrealmIcon}/></Link>
 				</button>
 				</span>

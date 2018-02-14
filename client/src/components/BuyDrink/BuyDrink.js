@@ -5,6 +5,11 @@ import Modal from 'react-responsive-modal';
 import TavernOwner from "../../assets/Tavern_Owner.jpg";
 import TavernOwnerVoice from "../../assets/Tavern Owner 2.mp3";
 import Sound from "react-sound";
+import Col from "../Col";
+import Container from "../Container";
+import moonshine from "../../assets/moonshine.jpg";
+import beer from "../../assets/beer.jpg";
+import wine from "../../assets/wine.jpg";
 
  
 class BuyDrink extends Component {
@@ -22,34 +27,6 @@ class BuyDrink extends Component {
     this.setState({ open: false });
   };
 
-  // offerADrink = (e) => {
-	// var gold = this.state.gold;
-	// let value = document.getElementById("drinkBtn").value;
-	// if(value === "beer"){
-	// 	notify.show("that will be ten gold!", 3000);
-  //   gold = gold - 10;
-  //   inebriationLevel = inebriationLevel + 1;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	notify.show("You have " + gold + " gold left!", 3000);
-	// }else if(value === "wine"){
-	// 	alert("that'll be 15 gold!");
-  //   gold = gold - 15;
-  //   inebriationLevel = inebriationLevel + 1.5;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!");
-	// }else if(value === "moonshine"){
-	// 	alert("that'll be 20 gold!");
-  //   gold = gold - 20;
-  //   inebriationLevel = inebriationLevel + 2;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!")
-	// }else{
-	// 	alert("get outta here!");
-  //   }
-  // }
 
   haveBeer = () =>{
       this.setState ({open: false})
@@ -95,23 +72,23 @@ class BuyDrink extends Component {
   render() {
     const { open } = this.state;
     return (
-      <div>
-        <button onClick={this.onOpenModal}><img src = {TavernOwner}/></button>
-        <Modal open={open} onClose={this.onCloseModal} little>
+      <div align= "center">
+       <img src = {TavernOwner} onClick={this.onOpenModal}/>
+       <Modal open={open} onClose={this.onCloseModal} little>
           <h2>What would you like?</h2>
           <Sound
-      url={TavernOwnerVoice}
-      playStatus={Sound.status.PLAYING}
-      playFromPosition={300 /* in milliseconds */}
-      onLoading={this.handleSongLoading}
-      onPlaying={this.handleSongPlaying}
-      onFinishedPlaying={this.handleSongFinishedPlaying}
-    />
-            <button onClick={this.haveBeer}>Have beer</button>
-            <button onClick={this.haveWine}>Have wine</button>
-            <button onClick={this.haveMoonshine}>Have moonshine</button>
-            <button onClick={this.onCloseModal}>I dont want a drink</button>
-        </Modal>
+            url={TavernOwnerVoice}
+            playStatus={Sound.status.PLAYING}
+            playFromPosition={300 /* in milliseconds */}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+           />
+            <button onClick={this.haveBeer}><img src = {beer}/></button>
+            <button onClick={this.haveWine}><img src = {wine}/></button>
+            <button onClick={this.haveMoonshine}><img src = {moonshine}/></button>
+            </Modal>
+            
       </div>
     );
   };

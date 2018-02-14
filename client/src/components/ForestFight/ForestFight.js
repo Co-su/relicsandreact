@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import {Link} from "react-router-dom";
 import Notifications, {notify} from 'react-notify-toast';
 import Modal from 'react-responsive-modal';
 import Goblin from "../../assets/Troop_Goblin.png";
+import fight from "../../assets/fight.png";
+import run from "../../assets/run.png";
 
 
 class ForestFight extends Component {
@@ -13,15 +15,15 @@ class ForestFight extends Component {
     yourHealingItems: 5,
 		yourCON: 100,
 		enemyCON: 100,
-		yourSTR: 10,
+		yourSTR: 100,
 		yourWIS: 20,
 		specialAttackCounter: 2,
 		enemySTR: 10,
 		yourTurn: true,
 		hasMushroom: false,
 		yourDEX: 10,
-		yourCHAR: 10,
-  };
+    yourCHAR: 10,
+    };
  
   onOpenModal = () => {
     this.setState({ open: true });
@@ -31,34 +33,6 @@ class ForestFight extends Component {
     this.setState({ open: false });
   };
 
-  // offerADrink = (e) => {
-	// var gold = this.state.gold;
-	// let value = document.getElementById("drinkBtn").value;
-	// if(value === "beer"){
-	// 	notify.show("that will be ten gold!", 3000);
-  //   gold = gold - 10;
-  //   inebriationLevel = inebriationLevel + 1;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	notify.show("You have " + gold + " gold left!", 3000);
-	// }else if(value === "wine"){
-	// 	alert("that'll be 15 gold!");
-  //   gold = gold - 15;
-  //   inebriationLevel = inebriationLevel + 1.5;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!");
-	// }else if(value === "moonshine"){
-	// 	alert("that'll be 20 gold!");
-  //   gold = gold - 20;
-  //   inebriationLevel = inebriationLevel + 2;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!")
-	// }else{
-	// 	alert("get outta here!");
-  //   }
-  // }
 
       fightAttack = () =>{
         this.setState ({open: false})
@@ -80,9 +54,8 @@ class ForestFight extends Component {
           yourTurn = false;
           this.setState({ enemyCON });
           this.setState({yourTurn});
-          notify.show("Enemy hp is now " + enemyCON + "!");
+          notify.show("Enemy hp is now " + enemyCON + "! You have acquired a Mushroom!","success",4000,myColor);
           if (enemyCON === 0){
-            notify.show("Enemy defeated! Mushroom acquired!");
             hasMushroom = true;
             yourCON = yourCON + 5;
             yourSTR = yourSTR + 5;
@@ -91,7 +64,7 @@ class ForestFight extends Component {
             this.setState({hasMushroom});
             if (yourTurn ===  false){
               yourCON = yourCON - enemySTR;
-              notify.show("Your hp is now " + yourCON + "!");
+              notify.show("Your hp is now " + yourCON + "!", "danger",4000,myColor);
               this.setState({yourCON});
             }
           }
@@ -128,19 +101,6 @@ class ForestFight extends Component {
     //       alert:("Out of healing items!");
     //     }
   
-    // haveWine = () =>{
-    //   this.setState ({open: false})
-    //   let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-    //   let gold = this.state.gold;
-    //   let inebriationLevel = this.state.inebriationLevel;
-    //   notify.show("That will cost 15 gold peices!","success", 3000, "myColor")
-    //   gold = gold-15;
-    //   inebriationLevel = inebriationLevel + 1.5;
-    //   this.setState({gold});
-    //   this.setState({inebriationLevel});
-    //   notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-    // }
-  
     // fight = () => {
     //   this.setState ({open: false})
     //   let myColor = { background: "#2CB61B", text: "#FFFFFF" };
@@ -174,51 +134,17 @@ class ForestFight extends Component {
     //   }
     // }
       
-  //     notify.show("That will cost 10 gold peices!","success", 3000, "myColor")
-  //     gold = gold-10;
-  //     inebriationLevel = inebriationLevel + 1;
-  //     this.setState({gold});
-  //     this.setState({inebriationLevel});
-  //     notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-  //     }
-
-  // haveWine = () =>{
-  //   this.setState ({open: false})
-  //   let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-  //   let gold = this.state.gold;
-  //   let inebriationLevel = this.state.inebriationLevel;
-  //   notify.show("That will cost 15 gold peices!","success", 3000, "myColor")
-  //   gold = gold-15;
-  //   inebriationLevel = inebriationLevel + 1.5;
-  //   this.setState({gold});
-  //   this.setState({inebriationLevel});
-  //   notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-  // }
-
-  // haveMoonshine = () => {
-  //   this.setState ({open: false})
-  //   let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-  //   let gold = this.state.gold;
-  //   let inebriationLevel = this.state.inebriationLevel;
-  //   let yourDEX = this.state.yourDEX;
-  //   let yourSTR = this.state.yourSTR;
-  //   notify.show("That will cost 20 gold peices!","success", 3000, "myColor")
-  //   gold = gold-20;
-  //   inebriationLevel = inebriationLevel + 2;
-  //   this.setState({gold});
-  //   this.setState({inebriationLevel});
-  //   notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-  // }
  
 render() {
   const { open } = this.state;
   return (
     <div>
-      <button onClick={this.onOpenModal}><img src={Goblin}/></button>
+      <img src={Goblin} onClick={this.onOpenModal} style = {{height:300, width:300}}/>
       <Modal open={open} onClose={this.onCloseModal} little>
-        <h2>Fight Me!</h2>
-          <button onClick={this.fightAttack}>Fight!</button>
-          <button onClick={this.onCloseModal}>Forget it!</button>
+          <img src={fight} onClick={this.fightAttack}/>
+          <Link to="/hubworld">
+          <img src={run} onClick={this.onCloseModal}/>
+          </Link>
       </Modal>
     </div>
   );

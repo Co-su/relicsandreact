@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Hubworld from "../components/Hubworld.jsx";
 import Row from "../components/Row";
+import Container from "../components/Container";
 import Col from "../components/Col";
 import Goblin from "../assets/Troop_Goblin.png";
 import ForestFight from "../components/ForestFight";
 import Modal from 'react-responsive-modal';
+import ForestIcon from "../components/forestIcon.png";
 // var db = require("./models");
 // import {
 //   BrowserRouter as Router,
@@ -138,13 +140,15 @@ export class Forest extends Component {
 render() {
 		return (
 			<div className="forest">
-				<div className="fight-goblin" onClick={this.fight}>
+				<div align="center">
+					<img src={ForestIcon}/>
+					<h1>Fight the Goblin to earn a Mushroom!</h1>
 				</div>
-			
-
-					<h2>FIGHT!
-						</h2>
+					<div align="center"  style={{margin: 50}}>
+						<Container>
 						<ForestFight/>
+						</Container>
+					</div>
 
 			</div>
 		);

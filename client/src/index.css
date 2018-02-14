@@ -18,7 +18,7 @@ body {
 }
 
 .codesrealm {
-    background-image: url("./assets/c_ode.jpg");
+    background-image: url("./assets/Realm.jpg");
 
 
     /* Full height */
@@ -32,7 +32,7 @@ body {
 }
 
 .forest {
-	background-image: url("./assets/forest.jpg");
+	background-image: url("./assets/foresthd.jpg");
 
 
     /* Full height */
@@ -45,7 +45,7 @@ body {
 }
 
 .castle {
-	background-image: url("./assets/castle.jpg");
+	background-image: url("./assets/castlehd.jpg");
 	    /* Full height */
     height: 100vh; 
 
@@ -57,7 +57,7 @@ body {
 
 .tavern {
 
-	background-image: url("./assets/tavern.jpg");
+	background-image: url("./assets/tavernhd.jpg");
 	    /* Full height */
     height: 100vh; 
 
@@ -73,13 +73,8 @@ body {
     border-style: solid;
 }
 
-.tavern-patron{
-    background-color: red;
-    height: 10vh;
-}
-
 #tavernLogo {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 
@@ -88,17 +83,17 @@ button {
 }
 
 #castleLogo {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 
 #forestLogo {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 
 #codesRealmLogo {
-    width: 150px;
+    width: 120px;
     height: auto;
 
 }

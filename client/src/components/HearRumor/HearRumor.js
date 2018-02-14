@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import Notifications, {notify} from 'react-notify-toast';
 import Modal from 'react-responsive-modal';
 import TavernPatron from "../../assets/tavern_customer.jpg";
+import chat from "../../assets/chat.png";
 import TavernPatronVoice from "../../assets/Tavern Patron 2.mp3";
 import RumorOne from "../../assets/Rumor 1 2.mp3";
 import RumorTwo from "../../assets/Rumor 2 2.mp3";
 import RumorThree from "../../assets/Rumor 3 2.mp3";
+import Col from "../Col";
+import Container from "../Container";
 var Sound = require('react-sound').default;
+
 
  
 class HearRumor extends Component {
@@ -36,90 +40,28 @@ class HearRumor extends Component {
     this.setState({ open: false });
   };
 
-  // offerADrink = (e) => {
-	// var gold = this.state.gold;
-	// let value = document.getElementById("drinkBtn").value;
-	// if(value === "beer"){
-	// 	notify.show("that will be ten gold!", 3000);
-  //   gold = gold - 10;
-  //   inebriationLevel = inebriationLevel + 1;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	notify.show("You have " + gold + " gold left!", 3000);
-	// }else if(value === "wine"){
-	// 	alert("that'll be 15 gold!");
-  //   gold = gold - 15;
-  //   inebriationLevel = inebriationLevel + 1.5;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!");
-	// }else if(value === "moonshine"){
-	// 	alert("that'll be 20 gold!");
-  //   gold = gold - 20;
-  //   inebriationLevel = inebriationLevel + 2;
-  //   this.setState({ gold });
-  //   this.setState({ inebriationLevel });
-	// 	alert("You have " + gold + " gold left!")
-	// }else{
-	// 	alert("get outta here!");
-  //   }
-  // }
-
   hearRumor = () =>{
       this.setState ({open: false})
       let myColor = { background: "#2CB61B", text: "#FFFFFF" };
       let rumor = ["I hear that C'ode is taking over the realm again. He has been asleep for thousands of years...", "I hear that the king's daughter, C'omma, is missing - that means that this game's code could crash!", "I hear that the magic mushrooms in the forest will grant you magical powers...I wonder if they have any use for defeating C'ode?"];
       let pickRumor = Math.floor(Math.random()*rumor.length);
 	    if(pickRumor === 0){
+        notify.show("It's just a rumor, but..."+rumor[0]+"","success",4000,myColor)
 	    }else if(pickRumor === 1){
-		alert("It's just a rumor, but... " + rumor[1]);
+		notify.show("It's just a rumor, but... " + rumor[1]+"","success",4000,myColor);
 	    }else if(pickRumor === 2){
-		alert("It's just a rumor, but... " + rumor[2]);
+		notify.show("It's just a rumor, but... " + rumor[2]+"","success",4000,myColor);
 	    }
       }
 
-//   haveWine = () =>{
-//     this.setState ({open: false})
-//     let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-//     let gold = this.state.gold;
-//     let inebriationLevel = this.state.inebriationLevel;
-//     notify.show("That will cost 15 gold peices!","success", 3000, "myColor")
-//     gold = gold-15;
-//     inebriationLevel = inebriationLevel + 1.5;
-//     this.setState({gold});
-//     this.setState({inebriationLevel});
-//     notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-//   }
-
-//   haveMoonshine = () => {
-//     this.setState ({open: false})
-//     let myColor = { background: "#2CB61B", text: "#FFFFFF" };
-//     let gold = this.state.gold;
-//     let inebriationLevel = this.state.inebriationLevel;
-//     let yourDEX = this.state.yourDEX;
-//     let yourSTR = this.state.yourSTR;
-//     notify.show("That will cost 20 gold peices!","success", 3000, "myColor")
-//     gold = gold-20;
-//     inebriationLevel = inebriationLevel + 2;
-//     this.setState({gold});
-//     this.setState({inebriationLevel});
-//     notify.show("You have" + gold + "gold peices left!","custom", 6000, "myColor")
-//     if (inebriationLevel >= 3){
-//       yourSTR = yourSTR + 20;
-//       this.setState({yourSTR});
-//       yourDEX = yourDEX - 20;
-//       this.setState({yourDEX});
-//     }
-//   }
- 
   render() {
     const { open } = this.state;
     return (
-      <div>
-        <button onClick={this.onOpenModal}><img src = {TavernPatron}/></button>
+    <div align="center">
+       <img src = {TavernPatron} onClick={this.onOpenModal}/>
         <Modal open={open} onClose={this.onCloseModal} little>
-          <h2>It's just a rumor, but...do you really wanna know?</h2>
-            <button onClick={this.hearRumor}>Hear Rumor</button>
+          <h2>It's just a rumor, but...do you really wanna hear?</h2>
+            <img src={chat} onClick={this.hearRumor}/>
             <Sound
       url={TavernPatronVoice}
       playStatus={Sound.status.PLAYING}
@@ -129,7 +71,7 @@ class HearRumor extends Component {
       onFinishedPlaying={this.handleSongFinishedPlaying}
     />
         </Modal>
-      </div>
+    </div> 
     );
   };
 };
