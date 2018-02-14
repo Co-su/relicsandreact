@@ -32,20 +32,20 @@ export class Hubworld extends Component {
 		<Container>
       		<Row>
         		<Col size="md-12" align = "center">
-          			<h1 style = {{fontSize: 60}}>Welcome To HubLanta!</h1>
+          			<h1 style = {{fontSize: 60}}>Head to the Tavern to get started!</h1>
         		</Col>
       		</Row>
       		<Row>
         		<Col size="md-12">
 				<span>
-				<button id = "forestBtn" style = {{margin: 60, marginLeft: 100}}>
+				<button id = "tavernBtn" style = {{margin: 60, marginLeft:130}}>
+					<Link to = "/tavern"><img id="tavernLogo" src={TavernIcon}/></Link>
+				</button>
+				<button id = "forestBtn" style = {{margin: 60, marginLeft:50}}>
 					<Link to = "/forest"><img id="forestLogo" src={ForestIcon}/></Link>
 				</button>
 				<button id = "castleBtn" style = {{margin: 60, marginLeft: 50}}>
 					<Link to = "/castle"><img id="castleLogo" src={CastleIcon}/></Link>
-				</button>
-				<button id = "tavernBtn" style = {{margin: 60, marginLeft:50}}>
-					<Link to = "/tavern"><img id="tavernLogo" src={TavernIcon}/></Link>
 				</button>
 				<button id = "realmBtn" style = {{margin: 60, marginLeft:50}}>
 					<Link to = "/codesrealm"><img id="codesRealmLogo" src={CodesrealmIcon}/></Link>
